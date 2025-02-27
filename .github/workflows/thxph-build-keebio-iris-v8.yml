@@ -1,4 +1,4 @@
-name: thxph - build keebio iris v7 fw
+name: thxph - build keebio iris v8 fw
 
 on:
   push:
@@ -8,19 +8,19 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-keebio-iris-v7:
+  build-keebio-iris-v8:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
       - uses: ./
         with:
-          keyboard: keebio/iris/rev7
+          keyboard: keebio/iris/rev8
           keymap: thxph
           local-keymap-path: keymaps/iris/thxph
-          output-dir: qmk-keebio-iris-v7
+          output-dir: qmk-keebio-iris-v8
 
       - uses: actions/upload-artifact@v4
         with:
-          name: keebio-iris-v7-built-images
-          path: qmk-keebio-iris-v7
+          name: keebio-iris-v8-built-images
+          path: qmk-keebio-iris-v8
